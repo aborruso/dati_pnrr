@@ -5,6 +5,8 @@ set -e
 set -u
 set -o pipefail
 
+nome="italia_domani"
+
 folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 URLbase="https://www.italiadomani.gov.it/content/sogei-ng/it/it/catalogo-open-data/jcr:content/root/container/opendatasearch.searchResults.html?orderby=%40jcr%3Acontent%2FobservationDateInEvidence&sort=desc&resultsOffset="
@@ -25,7 +27,7 @@ for i in {0..80..8}; do
 
     filename=$(basename "$path" .csv)
     # scarica i csv
-  curl -kL "$url" -o "$folder/../data/$filename.csv"
+    curl -kL "$url" -o "$folder/../../data/$nome/$filename.csv"
   done
 done
 
