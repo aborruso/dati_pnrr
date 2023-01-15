@@ -1,4 +1,4 @@
-name: aggiorna RSS ordinanze COVID-19 Regione Siciliana
+name: aggiorna Italia Domani
 
 on:
   repository_dispatch:
