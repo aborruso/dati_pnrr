@@ -18,7 +18,7 @@ for i in {0..80..8}; do
   curl -kL "$URLbase$i" >"$folder/tmp.html"
   # se non ci sono risultati esci dal ciclo
   if grep <"$folder/tmp.html" 'Non sono presenti risultati'; then
-    echo "NON SONO PRESENTI RISULTATI"
+    echo "Non ci sono più pagine con dati"
     break
   fi
   # estrai i link ai csv
