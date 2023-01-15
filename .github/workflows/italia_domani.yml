@@ -1,0 +1,29 @@
+name: aggiorna RSS ordinanze COVID-19 Regione Siciliana
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron:  '5 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Utilizza l'action github checkout@v2, per automatizzare il check-out
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: aggiorna dati
+      run: |-
+        cd ./script/italia_domani
+        chmod +x ./italia_domani.sh
+        ./italia_domani.sh
+    - name: Committa e pusha se ci sono variazioni nei dati
+      run: |-
+        git config user.name "automatico"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date --iso-8601=seconds)
+        git commit -m "italia_domani: ${timestamp}" || exit 0
+        git push
