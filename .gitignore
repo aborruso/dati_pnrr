@@ -8,6 +8,7 @@
 *.swp
 *.vi
 *~
+/.history/
 
 # OS or Editor folders
 ._*
