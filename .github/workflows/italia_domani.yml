@@ -3,7 +3,7 @@ name: aggiorna Italia Domani
 on:
   repository_dispatch:
   schedule:
-    - cron:  '5 20 * * *'
+    - cron:  '5 7 * * *'
   workflow_dispatch:
 
 jobs:
