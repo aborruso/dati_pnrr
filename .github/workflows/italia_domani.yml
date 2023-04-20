@@ -1,5 +1,10 @@
 name: aggiorna Italia Domani
 
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+
 on:
   repository_dispatch:
   schedule:
