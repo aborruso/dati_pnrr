@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Utilizza l'action github checkout@v2, per automatizzare il check-out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
         lfs: true
@@ -35,3 +35,5 @@ jobs:
         timestamp=$(date --iso-8601=seconds)
         git commit -m "italia_domani: ${timestamp}" || exit 0
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
