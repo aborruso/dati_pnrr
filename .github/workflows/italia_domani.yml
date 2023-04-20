@@ -22,6 +22,8 @@ jobs:
         lfs: true
     - name: aggiorna dati
       run: |-
+        sudo apt-get install git-lfs
+        git lfs install
         cd ./script/italia_domani
         chmod +x ./italia_domani.sh
         ./italia_domani.sh
