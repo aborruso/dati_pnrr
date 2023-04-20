@@ -38,3 +38,11 @@ find "$folder"/../../data/"$nome" -type f -size +100M -print0 | while IFS= read 
   gzip -c "$file" > "$folder"/../../data/"$nome"/"$basename".csv.gz
   rm -f "$file"
 done
+
+exit 0
+
+if git diff --quiet HEAD -- "$folder"/../../data/"$nome"; then
+  echo "Nessuna variazione nei file della cartella Italia Domani."
+else
+  git diff HEAD -- "$folder"/../../data/"$nome" | grep -E '^\+\+\+|^\-\-\-' >> "$folder"/../../data/"$nome"/update.txt
+fi
