@@ -1,0 +1,46 @@
+# Visit https://docs.rilldata.com/references/project-files to learn more about Rill project files.
+
+display_name: "localizzazione"
+model: "localizzazione_model"
+default_time_range: ""
+smallest_time_grain: ""
+timeseries: ""
+measures:
+  - label: "Numero progetti"
+    expression: "COUNT(DISTINCT codice_locale||CUP||identificativo_attivazione)"
+    description: ""
+    format_preset: humanize
+  - label: "Numero Comuni"
+    expression: "COUNT(DISTINCT COD_ISTAT_COMUNE)"
+    description: ""
+    format_preset: humanize
+  - label: "Finanz. PNRR"
+    expression: "SUM(finanziamento_pnrr)"
+    description: ""
+    format_preset: humanize
+  - label: "Finanz. Totale"
+    expression: "SUM(finanziamento_totale)"
+    description: ""
+    format_preset: humanize
+dimensions:
+  - label: Missione
+    property: missione
+    description: ""
+  - label: "Componente"
+    property: "componente"
+    description: ""
+  - label: "Misura"
+    property: "misura"
+    description: ""
+  - label: "Submisura"
+    property: "submisura"
+    description: ""
+  - label: Regione
+    property: regione
+    description: ""
+  - label: Provincia
+    property: provincia
+    description: ""
+  - label: Comune
+    property: comune
+    description: ""

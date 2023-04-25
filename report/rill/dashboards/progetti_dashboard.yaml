@@ -1,0 +1,51 @@
+# Visit https://docs.rilldata.com/references/project-files to learn more about Rill project files.
+
+display_name: "progetti_dashboard"
+model: "progetti"
+default_time_range: ""
+smallest_time_grain: ""
+timeseries: ""
+measures:
+  - label: Total records
+    expression: count(*)
+    description: Total number of records present
+    format_preset: humanize
+  - label: "PNRR"
+    expression: "sum(finanziamento_pnrr)"
+    description: ""
+    format_preset: humanize
+  - label: "Totale"
+    expression: "sum(finanziamento_totale)"
+    description: ""
+    format_preset: humanize
+dimensions:
+  - label: Missione
+    property: missione
+    description: ""
+  - label: Componente
+    property: componente
+    description: ""
+  - label: Misura
+    property: misura
+    description: ""
+  - label: Submisura
+    property: submisura
+    description: ""
+  - label: "Titolare"
+    property: "titolare"
+    description: ""
+  - label: "Natura"
+    property: "natura"
+    description: ""
+  - label: "Tipologia"
+    property: "tipologia"
+    description: ""
+  - label: "Settore"
+    property: "settore"
+    description: ""
+  - label: "Sottosettore"
+    property: "sottosettore"
+    description: ""
+  - label: "Categoria"
+    property: "categoria"
+    description: ""
