@@ -18,4 +18,6 @@ Thumbs.db
 .bak
 
 tmp*
-report/*
+report/italia-domani_files/*
+report/_publish.yml
+report/italia-domani.html
